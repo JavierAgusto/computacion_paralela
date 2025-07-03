@@ -1,0 +1,72 @@
+Descripción
+En una fría tarde, cerca de la Facultad de Ingeniería de la UTEM, unos estudiantes, cansados y hambrientos tras horas de estudio para la asignatura de Computación Paralela y Distribuida, fueron sorprendidos por un grupo de maleantes. Temeroso por sus pertenencias —celulares y computadoras— uno de ellos dio un paso atrás, pero no se percató de que un resplandor azul procedente de un “camión-kun” lo envolvió junto a sus compañeros. Tras un breve mareo, despertaron en un valle cubierto de flores luminosas y rodeado de montañas flotantes.
+En el majestuoso lobby del templo Kamisama, el propio dios les explicó que, aunque podían usar sus dispositivos y conectarse a Internet, estaban en Eldoria, un mundo mágico sacudido por dos grandes problemas:
+Identidad ciudadana
+ No existía un sistema administrativo para verificar la identidad: sólo se conocía a la gente por su nombre, fecha de nacimiento y lugar de residencia. Esto dificultaba la recaudación de tributos —los nobles siempre encontraban la forma de evadirlos— y la protección social de los más desfavorecidos.
+
+
+Caminos peligrosos
+ Las rutas estaban invadidas por maleza encantada, baches y trampas mágicas que ponían en riesgo a los viajeros y colapsaba el comercio y la comunicación entre poblados.
+
+
+
+Viendo su talento y sus extraños artilugios tecnológicos, el bondadoso Rey Aurelius IV los nombró “Protectores del Reino” y les encomendó dos misiones cruciales:
+Restaurar un sistema de identificación fiable.
+Mejorar las vías de comunicación.
+Si logran esta tarea, el rey compromete a los mejores magos del reino para enviarlos de vuelta a su mundo natal, por lo cuál ustedes están muy motivados en solucionar sus problemas.
+
+
+Solución del sistema de identificación
+Inspirándose en el R.U.N./R.U.T de nuestro mundo, implementaron un registro mágico donde a cada ciudadano se le asigna un número correlativo al nacer, guardado en tarjetas encantadas y respaldado por bitácoras mágicas que impiden errores de numeración. Además aquellos miembros del reino que no poseían nombre, fueron nombrados acorde a nuestros criterios de nombre en español.
+Estratificación social y código postal
+Eldoria se divide en 1000 provincias, cada una con 1000 ciudades o aldeas. A cada ciudadano se le asigna un estrato social de 0 a 9 (donde 0 es la Nobleza Suprema y 9, los Desposeídos). Para clasificar a sus 100 000 000 de habitantes, crearon un código postal de siete dígitos:
+1º dígito (0–9): estrato social.
+
+
+2º–4º dígitos (000–999): provincia.
+
+
+5º–7º dígitos (000–999): aldea o ciudad.
+
+
+Pudieron establecer la estratificación social y lo segmentan en 10 niveles:
+Estrato 9: Los Desposeídos, sin acceso a tierras ni oficios estables, subsisten con trabajos informales y trueques. 
+Estrato 8: Los Jornaleros, son trabajadores itinerantes, realizan faenas de temporada (cosecha, reparaciones básicas).
+Estrato 7: Obreros Especializados, son hábiles en minería, talla de piedra y oficios artesanales básicos. 
+Estrato 6: Comerciantes Menores, venden productos locales en mercados urbanos; manejan pequeños intercambios de grano, pieles y herramientas. 
+Estrato 5: Artesanos Cualificados, Talleres establecidos, crean objetos de metal, cerámica y prendas sencillas; tienen clientela fija. 
+Estrato 4: Funcionarios Reales, son los empleados de la corte y la administración (secretarios, recaudadores, guardias menores); disfrutan de salario y cierto estatus.
+Estrato 3: Profesionales Liberales, son eruditos, médicos, maestros y escribas; ejercen oficios intelectuales y cobran honorarios. 
+Estrato 2: Grandes mercaderes, son los propietarios de caravanas y talleres de exportación; dominan el comercio interregional.
+Estrato 1: Alta Nobleza Urbana, son quienes tienen títulos ducales y marquesados; disfrutan de palacios, corte de honor y prebendas.
+Estrato 0: Nobleza Suprema, es la familia real y casas aliadas de máximo rango; gobiernan, legislan y ostentan privilegios absolutos.
+
+De esta manera un código postal 0000000 representa a un miembro de la Nobleza Suprema en la provincia 000, ciudad 000. Mientras que un código postal 9999999 representa a la persona más desvalida de la sociedad que vive en la provincia de menor jerarquía y en la aldea menos afortunada del reino.
+Después de importante esfuerzo se realizó un censo que determinó la identificación de las personas, el lugar en que viven y al lugar al cuál se desplazan principalmente, esto se tabuló en un archivo de texto plano, donde cada campo está delimitado por comillas dobles (“”) y separado por punto y coma ‘;’, el archivo tiene la siguiente estructura:
+IDENTIFICADOR. Representa el RUT del ciudadano.
+ESPECIE. Tipo de especie dentro del reino, pueden ser:
+Humana.
+Elfica.
+Enana.
+Hombre Bestia.
+GÉNERO. La separación sexual dentro de la especie, o como se identifican pueden ser:
+Macho.
+Hembra.
+Otro.
+NOMBRE. Indica el primer nombre del ciudadano.
+APELLIDO. Indica el apellido del ciudadano.
+FECHA NACIMIENTO. Representa la fecha y hora del nacimiento en formato AÑO-MES-DÍATHORA:MINUTO:SEGUNDO, ejemplo: 1991-10-17T15:27:07
+CP ORIGEN. Es el código postal asociado al lugar en que vive la persona.
+CP DESTINO. Es el código postal asociado al lugar que más frecuentemente la persona debe viajar.
+
+El rey necesita saber lo siguiente:
+
+¿Cuántas personas pertenecen a cada estrato social?
+¿Qué porcentaje de la población pertenece a cada estrato social?
+¿Cuál es la edad promedio según cada especie y género?
+¿Cuál es la edad mediana según cada especie y género?
+¿Qué proporción de la población tiene menos de 18 años, entre 18–35, 36–60, más de 60 según especie y género?
+¿Cuál es la pirámide de edades de la población según especie, género?
+¿Cuál es el índice de dependencia (menores de 15 + mayores de 64) / población en edad de trabajar?
+Acorde a la información de origen y destino, determine los 10000 poblados con más viajes, con esta información el rey construirá o repará los caminos que unirían estas ciudades/aldeas.(Los Primeros 10000 viajes) ida-vuelta /vuelta -ida 
+
